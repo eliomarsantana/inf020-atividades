@@ -1,0 +1,17 @@
+#ifndef _DLL_H_
+#define _DLL_H_
+
+#if BUILDING_DLL
+# define DLLIMPORT __declspec (dllexport)
+#else /* Not BUILDING_DLL */
+# define DLLIMPORT __declspec (dllimport)
+#endif /* Not BUILDING_DLL */
+
+
+DLLIMPORT void HelloWorld (void);
+DLLIMPORT int soma(int a,int b);
+DLLIMPORT int subtracao(int a,int b);
+DLLIMPORT int multiplicacao(int a,int b);
+DLLIMPORT double divisao(int a,int b);
+
+#endif /* _DLL_H_ */
