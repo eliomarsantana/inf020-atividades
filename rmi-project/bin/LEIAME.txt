@@ -1,0 +1,8 @@
+Compile:
+1. javac RmiServer.java
+2. rmic RmiServer
+3. javac RmiClient.java
+ 
+Execute:
+1. em um prompt de comando digita -> java RmiServer
+2. em outro prompt digita -> java RmiClient <endereco ip do server que é o da máquina> 3232 <message text>

@@ -1,11 +1,14 @@
 import java.rmi.*;
 import java.rmi.registry.*;
-import java.rmi.server.*;
 import java.net.*;
 
 public class RmiServer extends java.rmi.server.UnicastRemoteObject implements CalculaInterface
 {
-    int      thisPort;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	int      thisPort;
     String   thisAddress;
     Registry registry;    // rmi registry for lookup the remote objects.
  
@@ -15,27 +18,7 @@ public class RmiServer extends java.rmi.server.UnicastRemoteObject implements Ca
     {
         System.out.println(x);
     }*/
-	public int somar(int x, int y)  throws RemoteException{
-		return x + y;
-	}
-	public int subtrair(int x, int y)  throws RemoteException{
-		return x - y;
-	}	
-	public int multiplicar(int x, int y)  throws RemoteException{
-		return x * y;
-	}	
-	public int dividir(int x, int y)  throws RemoteException{
-		int resultado = 0;
-		
-		try {
-			resultado = x / y;
-		}catch(NumberFormatException ex) {
-			ex.printStackTrace();
-		}
-		
-		return resultado;
-	}
- 
+
     public RmiServer() throws RemoteException
     {
         try{
@@ -67,4 +50,28 @@ public class RmiServer extends java.rmi.server.UnicastRemoteObject implements Ca
            System.exit(1);
     }
      }
+
+	public int somar(int x, int y) throws RemoteException {
+		return x + y;
+	}
+
+	public int subtrair(int x, int y) throws RemoteException {
+		return x - y;
+	}
+
+	public int multiplicar(int x, int y) throws RemoteException {
+		return x * y;
+	}
+
+	public int dividir(int x, int y) throws RemoteException {
+		int resultado = 0;
+		
+		try {
+			resultado = x / y;
+		}catch(NumberFormatException ex) {
+			ex.printStackTrace();
+		}
+		
+		return resultado;
+	}
 }
