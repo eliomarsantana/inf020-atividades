@@ -1,4 +1,7 @@
-; dlltool --base-file C:\Users\allan\AppData\Local\Temp/cca07352.base --output-exp minhadll.exp --dllname minhadll.dll --output-def libminhadll.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup@12 --def C:\Users\allan\AppData\Local\Temp/cca07352.def --output-lib libminhadll.a
+; dlltool --base-file C:\Users\PR32D7~1.GES\AppData\Local\Temp/cca06100.base --output-exp minhadll.exp --dllname minhadll.dll --output-def libminhadll.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup@12 --def C:\Users\PR32D7~1.GES\AppData\Local\Temp/cca06100.def --output-lib libminhadll.a
 EXPORTS
-	soma @ 1
-	HelloWorld @ 2
+	divisao @ 1
+	multiplicacao @ 2
+	soma @ 3
+	subtracao @ 4
+	HelloWorld @ 5
