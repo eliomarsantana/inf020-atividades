@@ -35,6 +35,6 @@ int main(int argc,char **argv)
     printf("\nA soma de %d + %d = %d\n",a,b,soma);
     //printf("\nA subtracao de %d + %d = %d\n",a,b,subtracao);
     //printf("\nA multiplicacao de %d + %d = %d\n",a,b,multiplicacao);
-    //printf("\nA divisao de %d + %d = %d\n",a,b,divisao);
+    //printf("\nA divisao de %d + %d = %f\n",a,b,divisao);
     system("pause");
 }
