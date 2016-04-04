@@ -11,10 +11,8 @@ public class RmiServer extends java.rmi.server.UnicastRemoteObject implements Ca
 	int      thisPort;
     String   thisAddress;
     Registry registry;    // rmi registry for lookup the remote objects.
+ 
 
-    public void exibirSoma(){
-    	
-    }
 
     public RmiServer() throws RemoteException
     {
@@ -48,19 +46,27 @@ public class RmiServer extends java.rmi.server.UnicastRemoteObject implements Ca
     }
      }
 
-	public void somar(int x, int y) throws RemoteException {
-		System.out.println("Soma: "+ (x + y));
+	public int somar(int x, int y) throws RemoteException {
+		return x + y;
 	}
 
-	public void subtrair(int x, int y) throws RemoteException {
-		System.out.println("Subtracao: "+ (x - y));
+	public int subtrair(int x, int y) throws RemoteException {
+		return x - y;
 	}
 
-	public void multiplicar(int x, int y) throws RemoteException {
-		System.out.println("Multiplicacao: "+ (x * y));
+	public int multiplicar(int x, int y) throws RemoteException {
+		return x * y;
 	}
 
-	public void dividir(int x, int y) throws RemoteException {
-		System.out.println("Divisao: "+ (x / y));
+	public int dividir(int x, int y) throws RemoteException {
+		int resultado = 0;
+		
+		try {
+			resultado = x / y;
+		}catch(NumberFormatException ex) {
+			ex.printStackTrace();
+		}
+		
+		return resultado;
 	}
 }
